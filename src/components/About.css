@@ -1,6 +1,6 @@
 .about {
   background: var(--bg-primary);
-  padding: 8rem 0;
+  padding: 10rem 0;
 }
 
 .about-container {
@@ -23,20 +23,20 @@
 }
 
 .about-title {
-  font-size: clamp(2.5rem, 8vw, 4rem);
-  font-weight: 900;
-  font-family: 'Space Grotesk', sans-serif;
-  letter-spacing: -0.03em;
-  color: #ffffff;
+  font-size: clamp(3rem, 11vw, 6rem);
+  font-weight: 400;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
   text-transform: uppercase;
   margin: 0;
-  line-height: 1;
+  line-height: 0.92;
 }
 
 .about-left p {
-  font-size: 1.15rem;
-  color: #cbd5e1;
-  line-height: 1.8;
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
   margin: 0;
 }
 
@@ -48,13 +48,14 @@
 }
 
 .capabilities-title {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 900;
-  font-family: 'Space Grotesk', sans-serif;
-  letter-spacing: -0.02em;
-  color: #ffffff;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 400;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
   text-transform: uppercase;
   margin: 0;
+  line-height: 0.95;
 }
 
 .capabilities-list {
@@ -67,21 +68,21 @@
 }
 
 .capabilities-list li {
-  font-size: 1rem;
-  color: #a0aec0;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
   padding-left: 0;
 }
 
 .capabilities-list strong {
   display: block;
-  color: #06b6d4;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
 }
 
 @media (max-width: 1024px) {
@@ -97,7 +98,7 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 
   .about-container {
@@ -109,7 +110,7 @@
   }
 
   .about-title {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(2.8rem, 12vw, 4.8rem);
   }
 
   .about-left p {
@@ -117,7 +118,7 @@
   }
 
   .capabilities-title {
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-size: clamp(1.9rem, 9vw, 3rem);
   }
 
   .capabilities-list li {

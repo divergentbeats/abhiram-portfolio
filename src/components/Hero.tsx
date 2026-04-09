@@ -39,17 +39,16 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1 className="hero-title" variants={textVariants} custom={1}>
-            Crafting
-            <strong>Fast, Reliable</strong>
-            Digital Systems
+            <span className="hero-title-line">Abhiram</span>
+            <span className="hero-title-line">Bhat</span>
           </motion.h1>
 
           <motion.p className="hero-subtitle" variants={textVariants} custom={2}>
-            Full-Stack Developer • Systems Architect
+            Crafting fast, reliable digital systems.
           </motion.p>
 
           <motion.p className="hero-description" variants={textVariants} custom={3}>
-            Turning complex requirements into fast, reliable systems that people trust.
+            Full-Stack Developer and Systems Architect building robust products with clarity and speed.
           </motion.p>
 
           <motion.div className="hero-cta" variants={textVariants} custom={4}>

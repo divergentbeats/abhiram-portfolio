@@ -27,7 +27,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <a href="#home">AB</a>
+          <a href="#home">ABHIRAM BHAT</a>
         </motion.div>
 
         <button className="menu-toggle" onClick={toggleMenu}>
