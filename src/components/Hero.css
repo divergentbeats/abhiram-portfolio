@@ -165,34 +165,3 @@
     font-size: 0.85rem;
   }
 }
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: 80vh;
-    padding: 2rem 0;
-  }
-
-  .hero-title {
-    font-size: clamp(2rem, 8vw, 3.5rem);
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-cta {
-    flex-direction: column;
-  }
-
-  .hero-stats {
-    flex-direction: column;
-    gap: 1.5rem;
-    border-top: none;
-    border-left: 2px solid rgba(168, 85, 247, 0.2);
-    padding-left: 1.5rem;
-    padding-top: 0;
-  }
-}
