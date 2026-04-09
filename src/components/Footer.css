@@ -1,6 +1,6 @@
 .footer {
   padding: 4rem 0;
-  background: var(--bg-primary);
+  background: transparent;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -21,7 +21,7 @@
 }
 
 .footer-heading {
-  font-size: 2.1rem;
+  font-size: 2.35rem;
   font-weight: 400;
   color: var(--text-primary);
   font-family: var(--font-heading);
@@ -32,7 +32,7 @@
 
 .footer-tagline {
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   margin: 0;
 }
 

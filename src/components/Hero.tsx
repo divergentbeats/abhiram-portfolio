@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import './Hero.css';
+import profilePhoto from '../assets/profile-photo.jpg';
 
 export default function Hero() {
   const textVariants = {
@@ -27,9 +28,9 @@ export default function Hero() {
 
   return (
     <section className="hero section" id="home">
-      <div className="container">
+      <div className="hero-shell">
         <motion.div
-          className="hero-content"
+          className="hero-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -48,13 +49,24 @@ export default function Hero() {
           </motion.p>
 
           <motion.p className="hero-description" variants={textVariants} custom={3}>
-            Full-Stack Developer and Systems Architect building robust products with clarity and speed.
+            Full-Stack Developer and Systems Architect focused on high-performance products, scalable architectures, and clean delivery.
           </motion.p>
 
           <motion.div className="hero-cta" variants={textVariants} custom={4}>
             <a href="mailto:abhirambhat2210@gmail.com" className="btn btn-primary">Email Me</a>
             <a href="#projects" className="btn btn-secondary">View My Work</a>
           </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="hero-right"
+          initial={{ opacity: 0, scale: 1.03 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <div className="hero-media-wrap">
+            <img className="hero-media" src={profilePhoto} alt="Abhiram Bhat portrait" />
+          </div>
         </motion.div>
       </div>
     </section>

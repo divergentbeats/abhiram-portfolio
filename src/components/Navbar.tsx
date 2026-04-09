@@ -8,6 +8,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
+    { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
     { label: 'Skills', href: '#skills' },
@@ -36,10 +37,7 @@ export default function Navbar() {
           <span></span>
         </button>
 
-        <motion.ul 
-          className={`navbar-menu ${isOpen ? 'active' : ''}`}
-          animate={{ opacity: isOpen ? 1 : 0, pointerEvents: isOpen ? 'auto' : 'none' }}
-        >
+        <motion.ul className={`navbar-menu ${isOpen ? 'active' : ''}`}>
           {menuItems.map((item, index) => (
             <motion.li 
               key={index}
