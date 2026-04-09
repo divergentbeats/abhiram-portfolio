@@ -39,9 +39,9 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1 className="hero-title" variants={textVariants} custom={1}>
-            <span>Crafting</span>
-            <span>Fast, Reliable</span>
-            <span>Digital Systems</span>
+            Crafting
+            <strong>Fast, Reliable</strong>
+            Digital Systems
           </motion.h1>
 
           <motion.p className="hero-subtitle" variants={textVariants} custom={2}>

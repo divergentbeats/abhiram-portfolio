@@ -39,62 +39,61 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
-
 export default function Projects() {
   return (
     <section className="projects section" id="projects">
       <div className="container">
-        <motion.div
+        <motion.h2
+          className="section-title"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={containerVariants}
         >
-          <h2>Featured Projects</h2>
+          Featured Projects
+        </motion.h2>
 
-          <div className="projects-grid">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                className={`project-card glass ${index % 2 === 0 ? 'left-align' : 'right-align'}`}
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-              >
-                <div className="project-header">
-                  <span className="project-category">{project.category}</span>
-                  <h3>{project.title}</h3>
-                </div>
-
+        <div className="projects-list">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              className={`project-block ${index % 2 === 0 ? 'text-left' : 'text-right'}`}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              variants={containerVariants}
+            >
+              <div className="project-content">
+                <span className="project-category">{project.category}</span>
+                <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
 
-                <div className="project-tech">
-                  {project.tech.map((tech, idx) => (
-                    <span key={idx} className="tech-badge">{tech}</span>
-                  ))}
-                </div>
+                <div className="project-meta">
+                  <div className="project-tech">
+                    {project.tech.map((tech, idx) => (
+                      <span key={idx} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
 
-                <motion.a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-link link-glow"
-                  whileHover={{ x: 5 }}
-                >
-                  View Project →
-                </motion.a>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                  <motion.a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-link"
+                    whileHover={{ x: 5 }}
+                  >
+                    View Project →
+                  </motion.a>
+                </div>
+              </div>
+
+              <div className="project-visual">
+                <div className="visual-placeholder"></div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
-};
+}

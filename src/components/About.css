@@ -1,76 +1,131 @@
+.about {
+  background: var(--bg-primary);
+  padding: 8rem 0;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 6rem;
   align-items: start;
 }
 
-.about-content h2 {
-  margin-bottom: 1.5rem;
-}
-
-.about-content p {
-  font-size: 1.05rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-}
-
-.about-features {
+.about-left {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-.feature-card {
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
+.about-title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 900;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
 }
 
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #a855f7, #06b6d4);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.about-left p {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  line-height: 1.8;
+  margin: 0;
 }
 
-.feature-card:hover::before {
-  opacity: 1;
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 2rem;
 }
 
-.feature-card h3 {
-  color: #06b6d4;
-  margin-bottom: 0.75rem;
-  font-size: 1.2rem;
+.capabilities-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 900;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
 }
 
-.feature-card p {
-  font-size: 0.95rem;
+.capabilities-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.capabilities-list li {
+  font-size: 1rem;
   color: #a0aec0;
+  line-height: 1.7;
+  padding-left: 0;
+}
+
+.capabilities-list strong {
+  display: block;
+  color: #06b6d4;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 1024px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 4rem;
+  }
+
+  .about-container {
+    padding: 0 3rem;
   }
 }
 
 @media (max-width: 768px) {
+  .about {
+    padding: 4rem 0;
+  }
+
+  .about-container {
+    padding: 0 1.5rem;
+  }
+
   .about-grid {
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
 
-  .feature-card {
-    padding: 1.5rem;
+  .about-title {
+    font-size: clamp(2rem, 6vw, 3rem);
   }
 
-  .about-content p {
+  .about-left p {
     font-size: 1rem;
+  }
+
+  .capabilities-title {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+
+  .capabilities-list li {
+    font-size: 0.95rem;
+    gap: 1.75rem;
+  }
+
+  .about-right {
+    gap: 2rem;
   }
 }

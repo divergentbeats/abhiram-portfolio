@@ -23,8 +23,8 @@ export default function About() {
   };
 
   return (
-    <section className="about section section-alt" id="about">
-      <div className="container">
+    <section className="about section" id="about">
+      <div className="about-container">
         <motion.div
           className="about-grid"
           variants={containerVariants}
@@ -32,32 +32,25 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          <motion.div className="about-content" variants={itemVariants}>
-            <h2>About Me</h2>
+          <motion.div className="about-left" variants={itemVariants}>
+            <h2 className="about-title">About</h2>
             <p>
               I'm a full-stack developer and systems architect passionate about building scalable, 
-              efficient systems that solve real-world problems. With expertise in modern web technologies 
-              and cloud infrastructure, I create seamless digital experiences.
+              efficient systems that solve real-world problems.
             </p>
             <p>
-              My approach combines technical excellence with thoughtful design. Every project I work on 
-              prioritizes clean code, performance optimization, and user-centric solutions.
+              With expertise in modern web technologies and cloud infrastructure, I create seamless 
+              digital experiences that prioritize performance, reliability, and user-focused design.
             </p>
           </motion.div>
 
-          <motion.div className="about-features" variants={itemVariants}>
-            <div className="glass feature-card">
-              <h3>Full-Stack Development</h3>
-              <p>React, Node.js, TypeScript, and modern web frameworks for building high-performance applications.</p>
-            </div>
-            <div className="glass feature-card">
-              <h3>Systems Architecture</h3>
-              <p>Designing scalable, maintainable systems with focus on reliability and performance.</p>
-            </div>
-            <div className="glass feature-card">
-              <h3>Cloud Infrastructure</h3>
-              <p>Google Cloud, Docker, and deployment optimization for production-grade applications.</p>
-            </div>
+          <motion.div className="about-right" variants={itemVariants}>
+            <h3 className="capabilities-title">Key Capabilities</h3>
+            <ul className="capabilities-list">
+              <li><strong>Full-Stack Development</strong><br />React, Node.js, TypeScript, modern web frameworks</li>
+              <li><strong>Systems Architecture</strong><br />Scalable design, reliability, performance optimization</li>
+              <li><strong>Cloud Infrastructure</strong><br />Google Cloud, Docker, deployment automation</li>
+            </ul>
           </motion.div>
         </motion.div>
       </div>

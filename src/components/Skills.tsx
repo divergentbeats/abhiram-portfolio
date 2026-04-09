@@ -42,44 +42,50 @@ const itemVariants = {
 
 export default function Skills() {
   return (
-    <section className="skills section section-alt" id="skills">
-      <div className="container">
-        <motion.div
+    <section className="skills section" id="skills">
+      <div className="skills-container">
+        <motion.h2
+          className="section-title"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={containerVariants}
         >
-          <h2>Skills & Expertise</h2>
+          Skills & Expertise
+        </motion.h2>
 
-          <div className="skills-grid">
-            {skillCategories.map((category, categoryIndex) => (
-              <motion.div
-                key={categoryIndex}
-                className="skill-category glass"
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-              >
-                <h3>{category.title}</h3>
-                <div className="skills-list">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.span
-                      key={skillIndex}
-                      className="skill-tag"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: skillIndex * 0.05 }}
-                      viewport={{ once: true }}
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        <motion.div
+          className="skills-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={containerVariants}
+        >
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={categoryIndex}
+              className="skill-category"
+              variants={itemVariants}
+            >
+              <h3 className="category-title">{category.title}</h3>
+              <div className="skills-list">
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.span
+                    key={skillIndex}
+                    className="skill-tag"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: skillIndex * 0.05 }}
+                    viewport={{ once: true }}
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
   );
-};
+}
