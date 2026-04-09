@@ -42,11 +42,27 @@
   --radius-lg: 1.5rem;
   
   /* Transitions */
-  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-fast: 0.35s;
+  --motion-base: 0.4s;
+  --motion-slow: 0.45s;
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
@@ -150,7 +166,7 @@ p {
 a {
   color: var(--text-primary);
   text-decoration: none;
-  transition: var(--transition-base);
+  transition: color var(--motion-base) ease, opacity var(--motion-base) ease;
 }
 
 a:hover {
@@ -189,13 +205,13 @@ a:hover {
 
 /* Section */
 .section {
-  padding: 8.5rem 0 7rem;
+  padding: 8rem 0 6.6rem;
   position: relative;
   background: transparent;
 }
 
 .section + .section {
-  margin-top: -2rem;
+  margin-top: -2.5rem;
 }
 
 .section::before {
@@ -204,9 +220,45 @@ a:hover {
   top: -90px;
   left: 0;
   right: 0;
-  height: 130px;
+  height: 150px;
   pointer-events: none;
   background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.55) 100%);
+}
+
+.app main {
+  position: relative;
+}
+
+.section-shell {
+  position: relative;
+}
+
+.section-shell + .section-shell {
+  margin-top: -2.2rem;
+}
+
+.section-shell::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -72px;
+  height: 132px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.52) 100%);
+}
+
+.section-shell:first-child::before {
+  display: none;
+}
+
+#home,
+#about,
+#projects,
+#skills,
+#contact {
+  scroll-margin-top: 96px;
 }
 
 /* Glass Card Component - REMOVED FOR EDITORIAL DESIGN */
@@ -272,7 +324,7 @@ a:hover {
   }
   
   .section {
-    padding: 5.4rem 0 4.2rem;
+    padding: 5rem 0 4rem;
   }
 
   .section + .section {
@@ -282,6 +334,15 @@ a:hover {
   .section::before {
     top: -48px;
     height: 76px;
+  }
+
+  .section-shell + .section-shell {
+    margin-top: -1.2rem;
+  }
+
+  .section-shell::before {
+    top: -42px;
+    height: 74px;
   }
   
   .container {

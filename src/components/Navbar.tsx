@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type MouseEvent } from 'react';
 import { motion } from 'framer-motion';
 import './Navbar.css';
 
@@ -15,6 +15,23 @@ export default function Navbar() {
     { label: 'Contact', href: '#contact' },
   ];
 
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
+
+    const lenis = (window as Window & {
+      __lenis?: { scrollTo: (target: string, options?: { offset?: number }) => void };
+    }).__lenis;
+
+    if (lenis) {
+      lenis.scrollTo(href, { offset: -88 });
+    } else {
+      const target = document.querySelector(href);
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    setIsOpen(false);
+  };
+
   return (
     <motion.nav 
       className="navbar"
@@ -28,7 +45,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <a href="#home">ABHIRAM BHAT</a>
+          <a href="#home" onClick={(event) => handleNavClick(event, '#home')}>ABHIRAM BHAT</a>
         </motion.div>
 
         <button className="menu-toggle" onClick={toggleMenu}>
@@ -45,7 +62,7 @@ export default function Navbar() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: index * 0.1 }}
             >
-              <a href={item.href} onClick={() => setIsOpen(false)}>
+              <a href={item.href} onClick={(event) => handleNavClick(event, item.href)}>
                 {item.label}
               </a>
             </motion.li>

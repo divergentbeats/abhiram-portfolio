@@ -3,6 +3,7 @@ import './Projects.css';
 import icaImage from '../assets/projects/ica-platform.png';
 import chillspaceImage from '../assets/projects/chillspace.png';
 import groundwaterImage from '../assets/projects/groundwater-dashboard.png';
+import portfolioImage from '../assets/projects/portfolio-hero.png';
 
 const projects = [
   {
@@ -27,6 +28,16 @@ const projects = [
   },
   {
     id: 3,
+    title: 'Portfolio Website',
+    category: 'Design',
+    description: 'Modern, responsive portfolio showcasing projects and skills. Built with focus on performance and elegant design.',
+    tech: ['React', 'Vite', 'Framer Motion'],
+    link: 'https://abhiram-portfolio-sand.vercel.app',
+    image: portfolioImage,
+    imageAlt: 'Portfolio website screenshot',
+  },
+  {
+    id: 4,
     title: 'Groundwater Dashboard',
     category: 'Data Science & Analytics',
     description: 'Predictive analytics dashboard for groundwater management, integrating Prophet time-series forecasting with interactive data visualization.',

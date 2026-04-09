@@ -1,10 +1,13 @@
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 100;
   background: rgba(5, 5, 5, 0.92);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   backdrop-filter: blur(8px);
 }
 
@@ -25,11 +28,12 @@
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  transition: color 0.3s ease;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
 }
 
 .navbar-logo a:hover {
   color: #ded9cf;
+  text-shadow: 0 0 16px rgba(236, 229, 213, 0.16);
 }
 
 .navbar-menu {
@@ -46,15 +50,31 @@
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
-  transition: all 0.3s ease;
+  transition: color 0.4s ease, transform 0.4s ease;
   position: relative;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid transparent;
+  padding-bottom: 0.3rem;
+}
+
+.navbar-menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.55);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
 }
 
 .navbar-menu li a:hover {
   color: var(--text-primary);
-  border-bottom-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-1px);
+}
+
+.navbar-menu li a:hover::after {
+  transform: scaleX(1);
 }
 
 .menu-toggle {
@@ -71,7 +91,7 @@
   height: 3px;
   background: var(--text-secondary);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 @media (max-width: 768px) {
