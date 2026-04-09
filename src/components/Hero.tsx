@@ -1,8 +1,24 @@
 import { motion } from 'framer-motion';
+import type { MouseEvent } from 'react';
 import './Hero.css';
 import profilePhoto from '../assets/profile-photo.jpg';
 
 export default function Hero() {
+  const handleInternalNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
+
+    const lenis = (window as Window & {
+      __lenis?: { scrollTo: (target: string, options?: { offset?: number }) => void };
+    }).__lenis;
+
+    if (lenis) {
+      lenis.scrollTo(href, { offset: -88 });
+    } else {
+      const target = document.querySelector(href);
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -54,7 +70,13 @@ export default function Hero() {
 
           <motion.div className="hero-cta" variants={textVariants} custom={4}>
             <a href="mailto:abhirambhat2210@gmail.com" className="btn btn-primary">Email Me</a>
-            <a href="#projects" className="btn btn-secondary">View My Work</a>
+            <a
+              href="#projects"
+              className="btn btn-secondary"
+              onClick={(event) => handleInternalNavClick(event, '#projects')}
+            >
+              View My Work
+            </a>
           </motion.div>
         </motion.div>
 

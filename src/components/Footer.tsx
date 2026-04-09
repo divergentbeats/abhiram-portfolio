@@ -1,8 +1,24 @@
 import { motion } from 'framer-motion';
+import type { MouseEvent } from 'react';
 import './Footer.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const handleInternalNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
+
+    const lenis = (window as Window & {
+      __lenis?: { scrollTo: (target: string, options?: { offset?: number }) => void };
+    }).__lenis;
+
+    if (lenis) {
+      lenis.scrollTo(href, { offset: -88 });
+    } else {
+      const target = document.querySelector(href);
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   const footerVariants = {
     initial: { opacity: 0 },
@@ -37,10 +53,10 @@ export default function Footer() {
         <motion.div className="footer-links" variants={itemVariants}>
           <div className="link-column">
             <h4>Navigation</h4>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" onClick={(event) => handleInternalNavClick(event, '#about')}>About</a>
+            <a href="#projects" onClick={(event) => handleInternalNavClick(event, '#projects')}>Projects</a>
+            <a href="#skills" onClick={(event) => handleInternalNavClick(event, '#skills')}>Skills</a>
+            <a href="#contact" onClick={(event) => handleInternalNavClick(event, '#contact')}>Contact</a>
           </div>
 
           <div className="link-column">

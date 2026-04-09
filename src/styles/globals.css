@@ -44,8 +44,9 @@
   /* Transitions */
   --transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --motion-fast: 0.35s;
-  --motion-base: 0.4s;
-  --motion-slow: 0.45s;
+  --motion-base: 0.45s;
+  --motion-slow: 0.55s;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
@@ -63,6 +64,14 @@ html.lenis body {
 
 .lenis.lenis-stopped {
   overflow: hidden;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
@@ -166,7 +175,7 @@ p {
 a {
   color: var(--text-primary);
   text-decoration: none;
-  transition: color var(--motion-base) ease, opacity var(--motion-base) ease;
+  transition: color var(--motion-base) var(--ease-smooth), opacity var(--motion-base) var(--ease-smooth);
 }
 
 a:hover {
@@ -189,7 +198,7 @@ a:hover {
   height: 2px;
   background: linear-gradient(90deg, #cfc8bc, #8d877b);
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform var(--motion-base) var(--ease-smooth);
 }
 
 .link-glow:hover::after {
@@ -205,13 +214,13 @@ a:hover {
 
 /* Section */
 .section {
-  padding: 8rem 0 6.6rem;
+  padding: 7.8rem 0 6.3rem;
   position: relative;
   background: transparent;
 }
 
 .section + .section {
-  margin-top: -2.5rem;
+  margin-top: -2.7rem;
 }
 
 .section::before {
@@ -220,7 +229,7 @@ a:hover {
   top: -90px;
   left: 0;
   right: 0;
-  height: 150px;
+  height: 158px;
   pointer-events: none;
   background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.55) 100%);
 }
@@ -234,7 +243,7 @@ a:hover {
 }
 
 .section-shell + .section-shell {
-  margin-top: -2.2rem;
+  margin-top: -2.4rem;
 }
 
 .section-shell::before {
@@ -243,10 +252,10 @@ a:hover {
   left: 0;
   right: 0;
   top: -72px;
-  height: 132px;
+  height: 142px;
   pointer-events: none;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.52) 100%);
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.48) 100%);
 }
 
 .section-shell:first-child::before {
@@ -324,11 +333,11 @@ a:hover {
   }
   
   .section {
-    padding: 5rem 0 4rem;
+    padding: 4.8rem 0 3.8rem;
   }
 
   .section + .section {
-    margin-top: -1rem;
+    margin-top: -1.1rem;
   }
 
   .section::before {
@@ -337,7 +346,7 @@ a:hover {
   }
 
   .section-shell + .section-shell {
-    margin-top: -1.2rem;
+    margin-top: -1.3rem;
   }
 
   .section-shell::before {

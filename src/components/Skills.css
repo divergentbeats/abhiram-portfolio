@@ -71,7 +71,7 @@
   text-transform: uppercase;
   letter-spacing: 0.11em;
   font-family: var(--font-body);
-  transition: all 0.3s ease;
+  transition: all 0.45s var(--ease-smooth);
   cursor: default;
 }
 

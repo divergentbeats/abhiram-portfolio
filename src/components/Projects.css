@@ -104,7 +104,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-family: var(--font-body);
-  transition: all 0.4s ease;
+  transition: all 0.45s var(--ease-smooth);
 }
 
 .tech-tag:hover {
@@ -124,7 +124,7 @@
   color: var(--text-primary);
   text-decoration: none;
   font-family: var(--font-body);
-  transition: color 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+  transition: color 0.45s var(--ease-smooth), border-color 0.45s var(--ease-smooth), transform 0.45s var(--ease-smooth);
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
 }
@@ -159,7 +159,7 @@
   box-shadow:
     0 18px 45px rgba(0, 0, 0, 0.35),
     0 0 28px rgba(236, 229, 213, 0.07);
-  transition: box-shadow 0.45s ease, border-color 0.45s ease;
+  transition: box-shadow 0.5s var(--ease-smooth), border-color 0.5s var(--ease-smooth);
 }
 
 .project-image-wrap::before,
@@ -173,13 +173,13 @@
 .project-image-wrap::before {
   z-index: 2;
   background: linear-gradient(180deg, rgba(8, 8, 8, 0.08) 0%, rgba(8, 8, 8, 0.24) 100%);
-  transition: opacity 0.45s ease;
+  transition: opacity 0.5s var(--ease-smooth);
 }
 
 .project-image-wrap::after {
   z-index: 3;
   background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 62%, rgba(5, 5, 5, 0.34) 100%);
-  transition: opacity 0.45s ease;
+  transition: opacity 0.5s var(--ease-smooth);
 }
 
 .project-image {
@@ -189,7 +189,7 @@
   display: block;
   transform: scale(1);
   filter: saturate(0.88) contrast(0.95) brightness(0.93);
-  transition: transform 0.45s ease, filter 0.45s ease;
+  transition: transform 0.5s var(--ease-smooth), filter 0.5s var(--ease-smooth);
 }
 
 .project-media-link:hover .project-image {
