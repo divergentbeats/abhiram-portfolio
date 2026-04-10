@@ -69,7 +69,8 @@ export default function Hero() {
           </motion.p>
 
           <motion.div className="hero-cta" variants={textVariants} custom={4}>
-            <a href="mailto:abhirambhat2210@gmail.com" className="btn btn-primary">Email Me</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abhirambhat2210@gmail.com" target="_blank" rel="noreferrer" className="btn btn-primary">Email Me</a>
+            <a href="/resume.pdf" download="Abhiram-Bhat-Resume.pdf" className="btn btn-secondary">Download Resume</a>
             <a
               href="#projects"
               className="btn btn-secondary"

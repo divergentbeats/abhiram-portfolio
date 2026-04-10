@@ -43,7 +43,7 @@ export default function Contact() {
             <div className="contact-info">
               <div className="info-group">
                 <h3 className="info-label">Email</h3>
-                <a href="mailto:abhirambhat2210@gmail.com" className="info-value">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abhirambhat2210@gmail.com" target="_blank" rel="noreferrer" className="info-value">
                   abhirambhat2210@gmail.com
                 </a>
               </div>
@@ -54,10 +54,10 @@ export default function Contact() {
               </div>
 
               <div className="social-links">
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-link">
+                <a href="https://www.linkedin.com/in/abhiram-bhat-b037b8330/" target="_blank" rel="noreferrer" className="social-link">
                   LinkedIn ↗
                 </a>
-                <a href="https://github.com" target="_blank" rel="noreferrer" className="social-link">
+                <a href="https://github.com/divergentbeats" target="_blank" rel="noreferrer" className="social-link">
                   GitHub ↗
                 </a>
               </div>

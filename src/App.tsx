@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,62 +11,32 @@ import './styles/globals.css';
 
 function App() {
   return (
-    <motion.div className="app">
+    <div className="app">
       <SmoothScroll />
       <Navbar />
       <main>
-        <motion.section
-          className="section-shell"
-          initial={{ opacity: 0.9, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-15% 0px -10% 0px' }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <section className="section-shell">
           <Hero />
-        </motion.section>
+        </section>
 
-        <motion.section
-          className="section-shell"
-          initial={{ opacity: 0.9, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-15% 0px -10% 0px' }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <section className="section-shell">
           <About />
-        </motion.section>
+        </section>
 
-        <motion.section
-          className="section-shell"
-          initial={{ opacity: 0.9, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-15% 0px -10% 0px' }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <section className="section-shell">
           <Projects />
-        </motion.section>
+        </section>
 
-        <motion.section
-          className="section-shell"
-          initial={{ opacity: 0.9, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-15% 0px -10% 0px' }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <section className="section-shell">
           <Skills />
-        </motion.section>
+        </section>
 
-        <motion.section
-          className="section-shell"
-          initial={{ opacity: 0.9, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-15% 0px -10% 0px' }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <section className="section-shell">
           <Contact />
-        </motion.section>
+        </section>
       </main>
       <Footer />
-    </motion.div>
+    </div>
   );
 }
 

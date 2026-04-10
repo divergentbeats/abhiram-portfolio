@@ -61,13 +61,13 @@ export default function Footer() {
 
           <div className="link-column">
             <h4>Connect</h4>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/abhiram-bhat-b037b8330/" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/divergentbeats" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
-            <a href="mailto:abhirambhat2210@gmail.com">Email</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abhirambhat2210@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
           </div>
         </motion.div>
 

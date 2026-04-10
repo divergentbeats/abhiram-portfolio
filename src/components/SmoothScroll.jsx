@@ -8,6 +8,14 @@ export default function SmoothScroll() {
       return undefined;
     }
 
+    if (window.__lenis) {
+      return undefined;
+    }
+
+    // Ensure native smooth scrolling never conflicts with Lenis.
+    document.documentElement.style.scrollBehavior = "auto";
+    document.body.style.scrollBehavior = "auto";
+
     const lenis = new Lenis({
       lerp: 0.08,
       smoothWheel: true,
@@ -15,6 +23,7 @@ export default function SmoothScroll() {
       touchMultiplier: 1,
       syncTouch: true,
       syncTouchLerp: 0.08,
+      autoResize: true,
       easing: (t) => 1 - Math.pow(1 - t, 3),
     });
 
@@ -30,7 +39,9 @@ export default function SmoothScroll() {
 
     return () => {
       window.cancelAnimationFrame(rafId);
-      delete window.__lenis;
+      if (window.__lenis === lenis) {
+        delete window.__lenis;
+      }
       lenis.destroy();
     };
   }, []);
